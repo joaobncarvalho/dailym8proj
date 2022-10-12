@@ -5,14 +5,17 @@ from django.db import models
 # Create your models here.
 
 
-class Users(models.Model):
+class User(models.Model):
     #host =
     #topic =
-    Username = models.TextField(_MAX_LENGTH=200)(NULL=False)
-    UserBdate = models.DateTimeField(NULL=False)
-    UserGender = models.CharField(NULL=False)
-    UserEmail = models.TextField(_MAX_LENGTH=200)(NULL=False)
-    UserMatricula = models.CharField(_MAX_LENGTH=8)(NULL=False)
-    UserPassword = models.TextField(_MAX_LENGTH=25)(NULL=False)
+    Username = models.CharField(max_length=200, null=False)
+    UserBdate = models.DateTimeField(null=False),
+    UserGender = models.CharField(null=False),
+    UserEmail = models.CharField(max_length=200, null=False)
+    UserMatricula = models.CharField(max_length=8, null=False)
+    UserPassword = models.CharField(max_length=25, null=False)
     updated = models.DateTimeField(auto_now=True)
     
+
+    def __str__(self):
+        return self.Username
