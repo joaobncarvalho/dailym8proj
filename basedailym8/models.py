@@ -9,6 +9,6 @@ from django.contrib.auth.models import User
 class Reserva(models.Model):
     name = models.CharField(max_length=200, null=False)
     date = models.DateTimeField(null=False)
-    type = models.CharField(max_length=10,null=False)
+    type = models.CharField(max_length=20,null=False)
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
