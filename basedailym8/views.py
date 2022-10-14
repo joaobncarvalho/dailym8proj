@@ -11,10 +11,18 @@ reserva = [
 
 def home(request):
     context = {'reserva': reserva}
+    context = {'estabelecimento': estabelecimento}
     return render(request, 'home.html', context)
 
 def reserva(request):
     return render(request, 'reservas.html')
+
+
+def estabelecimento(request):
+    return render(request, 'estabelecimento.html')
+
+
+
 
 
 
