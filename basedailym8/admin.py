@@ -5,7 +5,12 @@ from django.contrib import admin
 
 from .models import Reserva
 from .models import Estabelecimento
+from .models import Estacionamento
+from .models import PraiaEquipamento
 
 admin.site.register(Reserva)
 admin.site.register(Estabelecimento)
+admin.site.register(Estacionamento)
+admin.site.register(PraiaEquipamento)
+
 

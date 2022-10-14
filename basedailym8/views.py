@@ -21,6 +21,11 @@ def reserva(request):
 def estabelecimento(request):
     return render(request, 'estabelecimento.html')
 
+def estacionamento(request):
+    return render(request, 'estacionamento.html')
+
+def PraiaEquipamento(request):
+    return render(request, 'PraiaEquipamento.html')
 
 
 

@@ -21,3 +21,12 @@ class Estabelecimento(models.Model):
     releasedate = models.DateTimeField(null=False)
     type = models.CharField(max_length=20,null=False)
     reserva = models.OneToOneField(Reserva, on_delete=models.CASCADE,null=True)
+
+
+class Estacionamento(models.Model):
+    name = models.CharField(max_length=200, null=False)
+    lugares = models.IntegerField(null=True)
+
+class PraiaEquipamento(models.Model):
+    type = models.CharField(max_length=20,null=False)
+    equipamentos = models.IntegerField(null=False)
