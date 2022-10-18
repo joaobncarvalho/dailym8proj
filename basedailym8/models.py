@@ -27,6 +27,8 @@ class Estacionamento(models.Model):
     name = models.CharField(max_length=200, null=False)
     lugares = models.IntegerField(null=True)
 
-class PraiaEquipamento(models.Model):
-    type = models.CharField(max_length=20,null=False)
-    equipamentos = models.IntegerField(null=False)
+
+class Praia(models.Model):
+    name = models.CharField(max_length=100, null=False)
+    NumeroEquipamentos = models.IntegerField(default='',null=True)
+    reserva = models.OneToOneField(Reserva, on_delete=models.CASCADE,null=True, blank=True)
