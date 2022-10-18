@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='praiaequipamento',
             name='equipamentos',
-            field=models.IntegerField(default=''),
+            field=models.IntegerField(default=300),
         ),
         migrations.AlterField(
             model_name='praiaequipamento',

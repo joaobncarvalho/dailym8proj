@@ -12,7 +12,7 @@ reserva = [
 def home(request):
     context = {'reserva': reserva}
     context = {'estabelecimento': estabelecimento}
-    context = {'PraiaEquipamento': PraiaEquipamento}
+    context = {'Praia': Praia}
     return render(request, 'home.html', context)
 
 def reserva(request):
@@ -25,7 +25,7 @@ def estabelecimento(request):
 def estacionamento(request):
     return render(request, 'estacionamento.html')
 
-def PraiaEquipamento(request):
+def Praia(request):
     return render(request, 'Praia.html')
 
 
