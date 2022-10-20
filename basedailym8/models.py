@@ -13,7 +13,7 @@ class Reserva(models.Model):
     inidate = models.DateTimeField(null=False,default='')
     fimdate = models.DateTimeField(null=False,default='')
     type = models.CharField(max_length=20,null=False)
-    user = models.OneToOneField(User, on_delete=models.CASCADE,null=True,blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
 
     def __str__(self):
         return self.name
@@ -23,7 +23,7 @@ class Estabelecimento(models.Model):
     name = models.CharField(max_length=200, null=False)
     releasedate = models.DateTimeField(null=False)
     type = models.CharField(max_length=20,null=False)
-    reserva = models.OneToOneField(Reserva, on_delete=models.CASCADE,null=True, blank=True)
+    reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -31,7 +31,7 @@ class Estabelecimento(models.Model):
 class Estacionamento(models.Model):
     name = models.CharField(max_length=200, null=False)
     lugares = models.IntegerField(null=True)
-    EstEstabelecimento = models.OneToOneField(Estabelecimento, on_delete=models.CASCADE,null=True,blank=True)
+    EstEstabelecimento = models.ForeignKey(Estabelecimento, on_delete=models.CASCADE,null=True,blank=True)
 
     def __str__(self):
         return self.name
@@ -39,7 +39,7 @@ class Estacionamento(models.Model):
 class Praia(models.Model):
     name = models.CharField(max_length=100, null=False)
     NumeroEquipamentos = models.IntegerField(default='',null=True)
-    reserva = models.OneToOneField(Reserva, on_delete=models.CASCADE,null=True, blank=True)
+    reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE,null=True, blank=True)
 
     def __str__(self):
         return self.name

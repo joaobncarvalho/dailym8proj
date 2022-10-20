@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+<h1>Reservas</h1>
+
+<table>
+    <tr>
+        <th>Nome da Reserva</th>
+        <th>Inicio da Reserva</th>
+        <th>Fim da Reserva</th>
+        <th>Tipo de Reserva</th>
+    
+    </tr>
+    {% for reserva in reservas  %}
+    <tr>
+        <td>{{reserva.name}}</td>
+        <td>{{reserva.inidate}}</td>
+        <td>{{reserva.fimdate}}</td>
+        <td>{{reserva.type}}</td>
+        
+        <td><a href="{% url 'update-reserva' reserva.id  %}">Editar Reserva</a></td>
+        
+        
+    </tr>
+    
+    {% endfor  %}
+
+</table>
+
+{% endblock %}
