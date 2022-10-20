@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-%8tt676i($j3^4rmpt28=^io7+6%l#n#85rfz0^gc+=r4*tolu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
+
+
 
 
 # Application definition
@@ -84,8 +86,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dailym8proj',
         'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
+        'PASSWORD': '38caba3deb5a8610b8e9c136f55239278dab394ba0627a92',
+        'HOST': 'top2.nearest.of.dailym8proj-db.internal',
         'PORT': '5432',
     }
 }
