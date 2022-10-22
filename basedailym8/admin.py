@@ -4,12 +4,12 @@ from django.contrib import admin
 
 
 from .models import Reserva
-from .models import Estabelecimento
+from .models import Spot
 from .models import Estacionamento
 from .models import Praia
 
 admin.site.register(Reserva)
-admin.site.register(Estabelecimento)
+admin.site.register(Spot)
 admin.site.register(Estacionamento)
 admin.site.register(Praia)
 

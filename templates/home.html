@@ -1,26 +1,2 @@
-{% extends 'main.html' %}
 
 
-{% block content %}
-
-
-<h1>DailyM8</h1>
-
-
-<div>
-
-    <a href="{% url 'create-reserva' %}">Fazer Reserva</a>
-
-    <div>
-        {% for reserva in reservas %}
-        <div>
-
-            <h5>{{reserva.id}} -- {{reserva.name}}</h5>
-
-        </div>
-        {% endfor  %}
-    </div>
-
-</div>
-
-{% endblock %}

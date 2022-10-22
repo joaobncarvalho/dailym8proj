@@ -8,8 +8,18 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Reserva(models.Model):
+class Spot(models.Model):
     name = models.CharField(max_length=200, null=False)
+    releasedate = models.DateTimeField(null=False)
+    type = models.CharField(max_length=20,null=False)
+    
+
+    def __str__(self):
+        return self.name
+
+
+class Reserva(models.Model):
+    name = models.ForeignKey(Spot, on_delete=models.CASCADE,null=True,blank=True)
     inidate = models.DateTimeField(null=False,default='')
     fimdate = models.DateTimeField(null=False,default='')
     type = models.CharField(max_length=20,null=False)
@@ -18,23 +28,14 @@ class Reserva(models.Model):
     def __str__(self):
         return self.name
 
-
-class Estabelecimento(models.Model):
-    name = models.CharField(max_length=200, null=False)
-    releasedate = models.DateTimeField(null=False)
-    type = models.CharField(max_length=20,null=False)
-    reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE,null=True, blank=True)
-
-    def __str__(self):
-        return self.name
-
 class Estacionamento(models.Model):
     name = models.CharField(max_length=200, null=False)
     lugares = models.IntegerField(null=True)
-    EstEstabelecimento = models.ForeignKey(Estabelecimento, on_delete=models.CASCADE,null=True,blank=True)
+    EstEstabelecimento = models.ForeignKey(Spot, on_delete=models.CASCADE,null=True,blank=True)
 
     def __str__(self):
         return self.name
+
 
 class Praia(models.Model):
     name = models.CharField(max_length=100, null=False)
