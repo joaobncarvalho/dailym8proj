@@ -12,8 +12,8 @@ def home(request):
     context = {'reserva': reserva}
     return render(request, 'home.html', context)
 
-def reserva(request,pk):
-    reserva = Reserva.objects.all(id=pk)
+def reserva(request):
+    reserva = Reserva.objects.all()
     context = {'reserva': reserva}
     return render(request, 'reserva.html', context)
    

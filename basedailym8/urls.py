@@ -6,8 +6,8 @@ urlpatterns = [
     
 
 
-    path('reserva/<str:pk>/',views.reserva, name="reserva"),
-    path('reserva-single/',views.reservasingle, name="reservasingle"),
+    path('reserva/',views.reserva, name="reserva"),
+    path('reserva-single/<str:pk>/',views.reservasingle, name="reservasingle"),
     path('estabelecimento/', views.estabelecimento, name="estabelecimento"),
     path('estacionamento/', views.estacionamento, name="estacionamento"),
     path('Praia/', views.Praia, name="Praia"),
