@@ -1,15 +1,16 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
-
+from .models import Spot
 
    
 def spot(request):
-    return render(request, 'basedailym8/spot.html')
+    
+    spots = Spot.objects.all()
+    context = {'spots': spots}
+    return render(request, 'basedailym8/spot.html', context)
 
 def singlespot(request,pk):
     return render(request, 'basedailym8/singlespot.html')
-
-
 
 def home(request):
     return render(request, 'main.html')
