@@ -10,12 +10,13 @@
         <th>Nome: </th>
         <th>Tipo: </th>
     </tr>    
-    {% for i in spots %}
+    {% for i in reserva %}
         <tr>
             <td>{{i.id}}</td>
             <td>{{i.name}}</td>
             <td>{{i.type}}</td>
-            <td><a href="/spot/{{i.id}}">Ver Spot</a></td>
+            <td><a href="/spot/{{i.id}}">Ver Reserva</a></td>
+            
         </tr>
     {% endfor %}
 </table>

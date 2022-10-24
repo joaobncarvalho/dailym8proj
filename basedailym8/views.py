@@ -22,10 +22,17 @@ def singlespot(request,pk):
 def home(request):
     return render(request, 'main.html')
 
-#CRUD for reservas 
+# RESERVAS
 
-def reservas(request):
-    return render(request, 'reserva.html')
+def reserva(request):
+    reservas = Reserva.objects.all()
+    context = {'reservas':reservas}
+    return render(request, 'basedailym8/reserva.html', context)
+
+def singlereserva(request,pk):
+    reserva = Reserva.objects.get(id=pk)
+    context = {'reserva': reserva}
+    return render(request, 'basedailym8/reservasingle.html', context)
 
 def createReservas(request):
     form = ReservaForm()
@@ -53,7 +60,17 @@ def updateReservas(request,pk):
     context = {'form':form}
     return render(request, "basedailym8/reserva_form.html", context)
 
-#FIM --- CRUD for reservas 
+
+def deleteReservas(request,pk):
+    reserva = Reserva.objects.get(id=pk)
+    if request.method == 'POST':
+        reserva.delete()
+        return redirect('')
+    
+    context = {'object':reserva}
+    return render(request, 'basedailym8/delete_template.html', context)
+
+#FIM --- RESERVAS
 
 def estacionamento(request):
     return render(request, 'estacionamento.html')

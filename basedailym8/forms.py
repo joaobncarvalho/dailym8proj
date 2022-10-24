@@ -4,4 +4,4 @@ from .models import Reserva
 class ReservaForm(ModelForm):
     class Meta:
         model = Reserva
-        fields = ['inidate','fimdate']
+        fields = ['name','inidate','fimdate','type']

@@ -11,9 +11,11 @@ from django.contrib.auth.models import User
 
 class Spot(models.Model):
     SPOT_TYPE = (
-        ('spot_restaurante','Restaurante'),
-        ('spot_bar','Bar'),
-        ('spot_cafe','Cafe'),
+        ('Restaurante','spot_restaurante'),
+        ('Bar','spot_bar'),
+        ('Cafe','spot_cafe'),
+        ('Discoteca','spot_disco'),
+        ('Bar de Praia','spot_bardepraia'),
     )
     name = models.CharField(max_length=200, null=False)
     releasedate = models.DateTimeField(null=False)
@@ -26,9 +28,10 @@ class Spot(models.Model):
 
 class Reserva(models.Model):
     RESERVA_TYPE = (
-        ('reserva_almoco','Almoço'),
-        ('reserva_lanche','Lanche'),
-        ('reserva_jantar','Jantar'),
+        ('Almoço','almoco'),
+        ('Lanche','lanche'),
+        ('Jantar','jantar'),
+        ('Beber um Copo','copo'),
     )
     name = models.ForeignKey(Spot, on_delete=models.CASCADE,null=True,blank=True)
     inidate = models.DateTimeField(null=False,default='')

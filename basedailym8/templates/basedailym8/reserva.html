@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+
+<h1>M8 Spots</h1>
+
+
+
+<table>
+    <tr>
+        <th>ID: </th>
+        <th>Nome: </th>
+        <th>Tipo: </th>
+        <th>Inicio da Reserva: </th>
+        <th>Fim da Reserva: </th>
+    </tr>    
+    {% for i in reservas %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.type}}</td>
+            <td>{{i.inidate}}</td>
+            <td>{{i.fimdate}}</td>
+            <td><a href="/reserva/{{i.id}}">Ver Reserva</a></td>
+            <td><a href="{% url 'update-reserva' i.id %}">Editar Reserva</a></td>
+            <td><a href="{% url 'delete-reserva' i.id %}">Apagar Reserva</a></td>
+            
+        </tr>
+    {% endfor %}
+</table>
+
+<ul>
+ 
+    
+
+</ul>
+
+<a href="{% url 'create-reserva' %}">Fazer Reserva</a>
+
+{% endblock %}

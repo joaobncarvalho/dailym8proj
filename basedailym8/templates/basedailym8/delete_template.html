@@ -3,10 +3,16 @@
 {% block content %}
 
 <form action="" method="POST">
-    {% csrf_token %}
-    {{form.as_p}}
     
+    <p>Tem a certeza que quer apagar a Reserva {{object}} ?
+
+
+    <a href="{% url 'reserva' %}">Voltar</a>
+
     <input type="submit" value="Confirm">
+
+    </p>
+
 </form>
 
 {% endblock %}
