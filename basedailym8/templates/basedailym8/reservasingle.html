@@ -8,4 +8,7 @@
 <h3>Fim da Reserva: {{reserva.fimdate}}</h3>
 
 
+<a href="{% url 'update-reserva' reserva.id %}">Editar Reserva</a>
+<a href="{% url 'delete-reserva' reserva.id %}">Apagar Reserva</a>
+
 {% endblock %}
