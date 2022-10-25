@@ -65,9 +65,9 @@ def deleteReservas(request,pk):
     reserva = Reserva.objects.get(id=pk)
     if request.method == 'POST':
         reserva.delete()
-        return redirect('')
+        return redirect('/')
     
-    context = {'object':reserva}
+    context = {'object': reserva}
     return render(request, 'basedailym8/delete_template.html', context)
 
 #FIM --- RESERVAS
