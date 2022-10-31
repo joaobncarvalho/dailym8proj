@@ -4,7 +4,7 @@
 
 <form action="" method="POST">
     {% csrf_token %}
-    <p>Tem a certeza que quer apagar a Reserva {{object}} ?
+    <p>Tem a certeza que quer apagar a Reserva {{object}} no dia {{object.inidate}} ?
 
 
     <a href="{% url 'reserva' %}">Voltar</a>
