@@ -6,6 +6,11 @@ from .forms import ReservaForm
 
 
 
+
+
+def register(request):
+    return render(request, 'homeregister.html')
+
 #SPOTS
 
 def spot(request):
