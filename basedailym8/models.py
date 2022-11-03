@@ -17,6 +17,7 @@ class Spot(models.Model):
         ('Discoteca','spot_disco'),
         ('Bar de Praia','spot_bardepraia'),
     )
+    featured_image =models.ImageField(null=True, blank=True, default="logo.png")
     name = models.CharField(max_length=200, null=False)
     releasedate = models.DateTimeField(null=False)
     type = models.CharField(max_length=20,choices=SPOT_TYPE,null=False)
