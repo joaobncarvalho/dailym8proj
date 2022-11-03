@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {{% load staticfiles %}}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +13,7 @@
 
     <!-- NAVIGATION BAR -->
 
-    <img src="./images/logo-removebg-preview.png" style="width: 7%; height:20%; position:absolute; z-index: 4; margin-top: -2.5%;">
+    <img src={% static "logo-removebg-preview.png" %} style="width: 7%; height:20%; position:absolute; z-index: 4; margin-top: -2.5%;">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         
         <a class="navbar-brand" href="#" style="margin-left: 80%; visibility: hidden;">Navbar</a>
@@ -28,7 +29,7 @@
         </div>
       </nav>
 
-      <img src="./images/logo-removebg-preview.png" style="width: 40%; height:84%; position:absolute; z-index: 4; margin-top: -2.5%; margin-left: 29%;">
+      <img src="{{}}" style="width: 40%; height:84%; position:absolute; z-index: 4; margin-top: -2.5%; margin-left: 29%;">
 
       <a href="homeregister.html">
       <button class="btn btn-primary" style="position: absolute; margin-top: 25%; margin-left:40%; width: 8%; z-index: 4; background-color: limegreen; border-color: white;">REGISTAR</button>
