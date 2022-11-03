@@ -9,6 +9,7 @@
 
 }
 
+<<<<<<< HEAD:staticfiles/styles/main.css
 h1{
 
     color: blue
@@ -20,3 +21,14 @@ img {
     height: 200px;
     
 }
+=======
+#endfooter {
+
+   width: 101%;
+   height: 12rem;
+   margin-top: -5%;
+   margin-left: -0.5%;
+   background-color: black;
+
+}
+>>>>>>> ff0b407a83037747372de25a5a9ccba4d6f4f17b:templates/main.css
