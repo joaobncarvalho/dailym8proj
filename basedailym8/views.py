@@ -11,6 +11,15 @@ from .forms import ReservaForm
 def register(request):
     return render(request, 'homeregister.html')
 
+def login(request):
+    return render(request, 'homelogin.html')
+
+def mainpage(request):
+    return render(request, 'mainpage.html')
+
+
+
+
 #SPOTS
 
 def spot(request):
