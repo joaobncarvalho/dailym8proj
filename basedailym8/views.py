@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from .models import Spot
 from .models import Reserva
 from .forms import ReservaForm
-
+from .models import Restaurante
 
 
 
@@ -85,6 +85,21 @@ def deleteReservas(request,pk):
     return render(request, 'basedailym8/delete_template.html', context)
 
 #FIM --- RESERVAS
+
+#RESTAURANTS
+
+
+def restaurants(request):
+    
+    restaurants = Restaurante.objects.all()
+    context = {'restaurants': restaurants}
+    return render(request, 'basedailym8/restaurants.html', context)
+
+def restaurantsingle(request,pk):
+    
+    restaurant = Restaurante.objects.get(id=pk)
+    context = {'restaurant': restaurant}
+    return render(request, 'basedailym8/restaurantsingle.html', context)
 
 def estacionamento(request):
     return render(request, 'estacionamento.html')

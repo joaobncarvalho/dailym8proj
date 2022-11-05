@@ -6,7 +6,7 @@ urlpatterns = [
     
     #Paths API Reservas 
 
-    path('mainpage/', views.mainpage, name="mainpage"),
+   
     path('reserva/', views.reserva, name="reserva"),
     path('reserva/<str:pk>/', views.singlereserva, name="singlereserva"),
     path('create-reserva/', views.createReservas, name="create-reserva"),
@@ -15,10 +15,16 @@ urlpatterns = [
     
     #FIM --- Paths API Reservas
 
-
+    path('mainpage/', views.mainpage, name="mainpage"),
     path('register/', views.register, name="register"),
     path('', views.login, name="login"),
     
+    #RESTAURANTES
+    path('restaurant/',views.restaurants, name="restaurants"),
+    path('restaurant/<str:pk>/', views.restaurantsingle, name="restaurantsingle"),
+    #FIM -- RESTAURANTES
+
+
 
     path('spot/',views.spot, name="spots"),
     path('spot/<str:pk>/', views.singlespot, name="singlespot"),

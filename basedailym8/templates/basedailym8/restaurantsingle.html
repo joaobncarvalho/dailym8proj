@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+<h1>{{restaurant.name}}</h1>
+
+
+
+<a href="{% url 'update-reserva' restaurant.id %}">Editar Restaurante</a>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+
+<h1>M8 Restaurantes</h1>
+
+
+
+<table>
+    <tr>
+        <th>ID: </th>
+        <th>Nome: </th>
+        <th>Tipo: </th>
+    
+    </tr>    
+    {% for i in restaurants %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.type}}</td>
+            <td>{{i.inidate}}</td>
+            <td>{{i.fimdate}}</td>
+            <td><a href="/restaurant/{{i.id}}">Ver Restaurante</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+<ul>
+
+</ul>
+
+    
+<a href="{% url 'create-reserva' %}">Fazer Reserva</a>
+
+{% endblock %}
