@@ -71,90 +71,74 @@
        
 
       
-      <h1 style="position: absolute; color:black; margin-top: 6%; margin-left:2%; font-size:30px; ">RESERVA</h1>
+      <h1 style="position: absolute; color:black; margin-top: 6%; margin-left:2%; font-size:30px; ">MENÚ - NOME DO RESTAURANTE</h1>
      <h2 id="what">WHAT</h2>
    
-     
-
-      
-      <div id="organize2" style="width: 89%; height:75%; border-radius: 15px; background-color: lightgray; z-index: -2; position: absolute; margin-top: 6%; margin-left: 2%;">
-
-       <h1 id="nameestabelecimento" style="margin-left:2%; margin-top:2%;">NOME</h1>
-
-       <h5 id="tipoestabelecimento" style="margin-left:68%; margin-top:-3%;">TIPO</h5>
-
-       <h5 style="font-size: 14px; margin-left: 2%; margin-top: 1%;">DESCRIÇÃO DO LOCAL</h5>
-
-       <div id="descriptionbox" style="width: 70%; height:50%; background-color: gray; margin-left: 2%; border-radius: 10px;">
+     <div id="organize20" style="width:76.5%; overflow-y: scroll; height:71%; background-color: lightgray; border-radius: 10px; position: absolute; margin-left: 14.2%; margin-top: 7%;">
     
-    <!--CONTEUDO DA DESCRICAO-->
-    </div>
-
-       <h3 id="numberofavailableitems" style="margin-left: 2%; margin-top:2%;">NªMESAS/TOLDOS/LUGARES DISPONIVEIS:</h3>
-
-       <h3 id="numberoflikes" style="margin-left: 2%; margin-top:1%;">LIKES:</h3>
-
-       <a href="restaurantemenu.html">
-       <button type="button" class="btn btn-primary btn-sm" style="margin-top: -1.1%; margin-left: 75%; position:absolute;"><b>VER MENU</b></button>
-       </a>
-
-       <a href="packsplace.html">
-       <button type="button" class="btn btn-primary btn-sm" style="margin-top: -1.1%; margin-left: 83%; position:absolute;"><b>VER PACKS</b></button>
-       </a>
-       
-       <a href="makereserva.html">
-       <button type="button" id="reservarbutton" class="btn btn-primary btn-sm" style="margin-top: -1.1%; margin-left: 91%; position:absolute;"><b>RESERVAR</b></button>
-       </a>
-    </div>
-
-   <!-- MODAL PARA O POPUP DE CONFIRMAÇÃO DE RESERVA -->
-
-   <div class="bg-modal" id="bg-modal" style="width:100%; height:100%; background-color:black; opacity:0.8; position: absolute; top:0; display: none;">
-
-    <div class="modal-content" style="margin-left: 32%; position: absolute; margin-top: 8%; width:34%; height:70%; background-color: white; border-radius: 4px; opacity: 1;">
-
-      <button type="button" id="voltarreservapagina" onclick="closeconfirmarreserva()" class="btn btn-primary btn-sm" style="margin-top: 7%; margin-left: 85%; position:absolute; height:4.5%; font-size: 10px;"><b> < VOLTAR</b></button>
-      <h3 style="position: absolute; margin-left: 22%; margin-top: 5%;">CONFIRMAR RESERVA</h3>
-
-      
-      <div class="info-content" style="width: 96%; height:81%; background-color:gray; margin-left: 2%; margin-top: 15%;">
-      
-        <h3 style="color: white; font-size:22px; margin-left: 5%; margin-top: 5%;">NOME DO UTILIZADOR</h3>
-
-        <h3 style="color: white; font-size:22px; margin-left: 5%; margin-top: 2%;">MESA/TOLDO/LUGAR</h3>
-
-        <h3 style="color: white; font-size:22px; margin-left: 5%; margin-top: 2%;">HORÁRIO LUGAR/LOCALIZACAO DE TOLDO/MESA</h3>
-
-        <h3 style="color: white; font-size:22px; margin-left: 5%; margin-top: 2%;">SERVIÇO DO ESTACIONAMENTO/HORARIO MESA/HORARIO TOLDO</h3>
-
-        <h3 style="color: white; font-size:22px; margin-left: 5%; margin-top: 2%;">MATRICULA ESTACIONAMENTO/SERVIÇO DE TOLDOS/SERVIÇO DO RESTAURANTE</h3>
-
-        <button type="button" id="reservar" onclick="reservarpedido()" class="btn btn-success" style="margin-left: 39%; margin-top: 8%;">RESERVAR</button>
         
-      </div>
-
-      <div class="reservaconfirmada" id="reservaconfirmada" style="width:60%; height:50%; background-color:lime; margin-top: -66%; margin-left: 20%; display: none;">
-
-        <button type="button" id="voltarpedidoreservabotao" onclick="voltarpedidoreserva()"  class="btn btn-primary btn-sm" style="margin-top: 4%; margin-left: 42%; position:absolute; height:4.5%; font-size: 10px; width: 15%;"><b> < VOLTAR</b></button>
-
-
-        <img src="./images/success-icon-10.png" style="width:30%; height:40%; margin-top: 14%; margin-left:34%;">
-
-        <h4 style="color: white; margin-left: -46%; margin-top: 49%; font-size: 18px;">RESERVA CONFIRMADA</h4>
-     
-
-      </div>
-
-
-    </div>
-
-   
+        <!--ORGANIZE NECESSÁRIO PARA PRINTAR CADA PRATO APÓS UM TIPO DE PRATO SER SELECIONADO-->
     
-  </div>
+     </div>
 
- 
+     <div id="optionsmenudiv" style="width: 10%; height:70%; margin-top: 7.1%; margin-left: 2.2%; background-color:transparent; position: absolute;">
 
+        <div id="aperitivosbutton" style="width:120%; height:17%; background-color:gray; cursor: pointer;" onclick="filterprato(1)">
+
+           <h3 style="color:white; align-items:center; margin-left: 4%; margin-top:19.1%; position:absolute;">APERITIVOS</h3>
+
+            <!--NECESSITARÁ DE SELECT-->
+
+        </div>
+
+        <div id="entradasbutton" style="width: 120%; height:17%; background-color:gray; margin-top:13%; cursor: pointer;" onclick="filterprato(2)">
+
+            <h3 style="color:white; align-items:center; margin-top:19.1%; position:absolute; margin-left: 4%;">ENTRADAS</h3>
+
+            <!--NECESSITARÁ DE SELECT-->
+
+        </div>
+
+        <div id="pratosprincipaisbutton" style="width: 120%; height:17%; background-color:gray; margin-top:13%; cursor: pointer;" onclick="filterprato(3)">
+
+            <h3 style="color:white; align-items:center; margin-top:7.1%; position:absolute; margin-left: 4%; ">PRATOS PRINCIPAIS</h3>
+
+            <!--NECESSITARÁ DE SELECT-->
+
+        </div>
+
+        <div id="sobremesasbutton" style="width: 120%; height:17%; background-color:gray; margin-top:13%; cursor: pointer;" onclick="filterprato(4)">
+
+            <h3 style="color:white; align-items:center; margin-top:7.1%; position:absolute; margin-left: 4%;">SOBREMESAS</h3>
+
+            <!--NECESSITARÁ DE SELECT-->
+
+        </div>
+
+        <div id="pratosdodiabutton" style="width: 120%; height:17%; background-color:gray; margin-top:13%; cursor: pointer;" onclick="filterprato(5)">
+
+            <h3 style="color:white; align-items:center; margin-top:7.1%; position:absolute; margin-left: 4%;">PRATOS DO DIA</h3>
+
+            <!--NECESSITARÁ DE SELECT-->
+
+        </div>
+
+     </div>
   
+     <!--DIV DE CADA PRATO QUE SERÁ INTRODUZIDO DENTRO DO ORGANIZE | ESTARÁ COMENTADO PARA SER INTRODUZIDO NUM LOOP FOR | O MARGIN-LEFT E TOP DEVE SER RETIRADO, SERÁ COLOCADO SOMENTE PARA A POSIÇÃO-->
+
+     <div id="boxprato" style="width: 74.5%; height:12%; background-color: gray; position: absolute; padding: 5px; margin-left: 15%; margin-top: 8%;">
+
+       <h3 style="color: white;">NOME DO PRATO</h3>
+
+       <h3 style="color: white; font-size: 15px;">DESCRIÇÃO</h3>
+
+       <h3 style="color: white; font-size: 15px; margin-left: 90%; margin-top: -2%;">PREÇO: </h3>
+
+     </div>
+
+
+
   <button type="button" class="btn btn-primary btn-sm" style="margin-top: 3.1%; margin-left: 85%; position:absolute;"><b> < VOLTAR</b></button>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
@@ -162,30 +146,12 @@
 
       <script>
 
-        function voltarpedidoreserva(){
-
-          document.getElementById("reservaconfirmada").style.display = "none";
-
-        }
-
-
-        function reservarpedido(){
-
-          document.getElementById("reservaconfirmada").style.display = "flex";
+        function filterprato(id_type){
+ 
+            console.log(id_type);
 
         }
 
-        function closeconfirmarreserva(){
-
-          document.getElementById("bg-modal").style.display = "none";
-
-        }
-
-         function openpopup(){
-
-            document.getElementById("bg-modal").style.display = "flex";
-
-         }
 
 
       </script>
