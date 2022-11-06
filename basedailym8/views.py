@@ -4,7 +4,8 @@ from .models import Spot
 from .models import Reserva
 from .forms import ReservaForm
 from .models import Restaurante
-
+from .models import Estacionamento
+from .models import Praiaequip
 
 
 
@@ -16,6 +17,8 @@ def login(request):
 
 def mainpage(request):
     return render(request, 'mainpage.html')
+
+
 
 
 
@@ -33,8 +36,7 @@ def singlespot(request,pk):
 
 #FIM --- SPOTS
 
-def home(request):
-    return render(request, 'main.html')
+
 
 # RESERVAS
 
@@ -86,6 +88,7 @@ def deleteReservas(request,pk):
 
 #FIM --- RESERVAS
 
+
 #RESTAURANTS
 
 
@@ -93,13 +96,50 @@ def restaurants(request):
     
     restaurants = Restaurante.objects.all()
     context = {'restaurants': restaurants}
-    return render(request, 'basedailym8/restaurants.html', context)
+    return render(request, 'discoverrestaurants.html', context)
 
 def restaurantsingle(request,pk):
     
     restaurant = Restaurante.objects.get(id=pk)
     context = {'restaurant': restaurant}
     return render(request, 'basedailym8/restaurantsingle.html', context)
+
+#FIM -- RESTAURANTES
+
+#ESTACIONAMENTOS
+
+
+def parking(request):
+    
+    parkings = Estacionamento.objects.all()
+    context = {'parkings': parkings}
+    return render(request, 'discoverestacionamento.html', context)
+
+def parkingsingle(request,pk):
+    
+    parking = Estacionamento.objects.get(id=pk)
+    context = {'parking': parking}
+    return render(request, 'basedailym8/restaurantsingle.html', context)
+
+#FIM -- ESTACIONAMENTOS
+
+
+#EQUIPAMENTOSPRAIA
+
+
+def equips(request):
+    
+    equips = Praiaequip.objects.all()
+    context = {'equips': equips}
+    return render(request, 'discovertoldos.html', context)
+
+def equipsingle(request,pk):
+    
+    equip = Praiaequip.objects.get(id=pk)
+    context = {'equip': equip}
+    return render(request, 'basedailym8/restaurantsingle.html', context)
+
+#FIM -- EQUIPAMENTOSPRAIA
 
 def estacionamento(request):
     return render(request, 'estacionamento.html')

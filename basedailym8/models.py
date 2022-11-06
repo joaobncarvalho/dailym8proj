@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 
 class Pratos(models.Model):
-    featured_image =models.ImageField(null=True, blank=True, default="logo.png")
+    featured_image =models.ImageField(null=True, blank=True, default="logosemfundo.png")
     name = models.CharField(max_length=200, null=False)
     price = models.IntegerField(null=False, default='', blank=False)
 
@@ -19,7 +19,7 @@ class Pratos(models.Model):
 
 class Menu(models.Model):
     
-    featured_image =models.ImageField(null=True, blank=True, default="logo.png")
+    featured_image =models.ImageField(null=True, blank=True, default="logosemfundo.png")
     name = models.CharField(max_length=200, null=False)
     pratos = models.ManyToManyField(Pratos)
 
@@ -35,7 +35,7 @@ class Restaurante(models.Model):
         ('Italiano','rest_italiano'),
         ('Japonês','rest_japones'),
     )
-    featured_image =models.ImageField(null=True, blank=True, default="logo.png")
+    featured_image =models.ImageField(null=True, blank=True, default="logosemfundo.png")
     name = models.CharField(max_length=200, null=False)
     releasedate = models.DateTimeField(null=False)
     type = models.CharField(max_length=20,choices=RESTAURANTE_TYPE,null=True)
@@ -49,29 +49,12 @@ class Restaurante(models.Model):
 
 
 class Estacionamento(models.Model):
-    featured_image =models.ImageField(null=True, blank=True, default="logo.png")
+    featured_image =models.ImageField(null=True, blank=True, default="logosemfundo.png")
     name = models.CharField(max_length=200, null=False)
     releasedate = models.DateTimeField(null=False)
     lugares = models.IntegerField(null=False, blank = False, default='')
     
     
-
-    def __str__(self):
-        return str(self.name)
-
-class Praiaequip(models.Model):
-    
-    EQUIPAMENTO_TYPE = (
-        ('Espreguiçadeira','equi_espreguicadeira'),
-        ('Toldo','equi_toldo'),
-    )
-    
-    featured_image =models.ImageField(null=True, blank=True, default="logo.png")
-    name = models.CharField(max_length=200, null=False)
-    releasedate = models.DateTimeField(null=False)
-    lugares = models.IntegerField(null=False, blank = False, default='')
-    restaurante = models.ForeignKey(Restaurante, on_delete=models.CASCADE,null=True,blank=True)
-    type = models.CharField(max_length=20,choices=EQUIPAMENTO_TYPE,null=False)
 
     def __str__(self):
         return str(self.name)
@@ -80,18 +63,13 @@ class Praiaequip(models.Model):
 class Spot(models.Model):
     
     
-    featured_image =models.ImageField(null=True, blank=True, default="logo.png")
+    featured_image =models.ImageField(null=True, blank=True, default="logosemfundo.png")
     name = models.CharField(max_length=200, null=False)
     releasedate = models.DateTimeField(null=False)
-    restaurante = models.ForeignKey(Restaurante, on_delete=models.CASCADE,null=True,blank=True)
-    estacionamento = models.ForeignKey(Estacionamento, on_delete=models.CASCADE,null=True,blank=True)
-    praiaequip = models.ForeignKey(Praiaequip, on_delete=models.CASCADE,null=True,blank=True)
-
+ 
 
     def __str__(self):
         return str(self.name)
-
-
 
 class Reserva(models.Model):
     RESERVA_TYPE =(('Almoço', 'almoco'), 
@@ -107,13 +85,29 @@ class Reserva(models.Model):
     def __str__(self):
         return str(self.name)
 
-
-
-
 class Praia(models.Model):
     name = models.CharField(max_length=100, null=False)
-    NumeroEquipamentos = models.IntegerField(default='',null=True)
     reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE,null=True, blank=True)
 
+        
     def __str__(self):
         return self.name
+
+class Praiaequip(models.Model):
+    
+    EQUIPAMENTO_TYPE = (
+        ('Espreguiçadeira','equi_espreguicadeira'),
+        ('Toldo','equi_toldo'),
+    )
+    
+    featured_image =models.ImageField(null=True, blank=True, default="logosemfundo.png")
+    releasedate = models.DateTimeField(null=False)
+    equipamentos = models.IntegerField(null=False, blank = False, default='')
+    restaurante = models.ForeignKey(Restaurante, on_delete=models.CASCADE,null=True,blank=True)
+    type = models.CharField(max_length=20,choices=EQUIPAMENTO_TYPE,null=False)
+    praia = models.ForeignKey(Praia, on_delete=models.CASCADE,null=True,blank=True)
+
+    def __str__(self):
+        return str(self.praia)
+
+

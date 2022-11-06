@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,7 @@
 
     
     <nav class="navbar navbar-dark bg-dark fixed-top">
-        <img src="/staticfiles/images/logo-removebg-preview.png" style="width: 7%; height:210%; position:absolute; z-index: 13; margin-top: -0.5%;">
+        <img src="/staticfiles/images/logosemfundo.png" style="width: 7%; height:210%; position:absolute; z-index: 13; margin-top: -0.5%;">
         <div class="container-fluid">
           <a class="navbar-brand" href="#" style="visibility: hidden;">Offcanvas dark navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
@@ -37,13 +38,13 @@
                   </li>
                   <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Descobrir</h5>
                   <li class="nav-item">
-                    <a class="nav-link" href="discoverrestaurants.html"> <i class="fa-solid fa-utensils"></i> Restaurantes</a>
+                    <a class="nav-link" href="{% url 'restaurants' %}"> <i class="fa-solid fa-utensils"></i> Restaurantes</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="discovertoldos.html"> <i class="fa-solid fa-umbrella-beach"></i> Toldos</a>
+                    <a class="nav-link" href="{% url 'equips' %}"> <i class="fa-solid fa-umbrella-beach"></i> Toldos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="discoverestacionamento.html"> <i class="fa-solid fa-square-parking"></i> Estacionamentos</a>
+                    <a class="nav-link" href="{% url 'parkings' %}"> <i class="fa-solid fa-square-parking"></i> Estacionamentos</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="discoverpacks.html"> <i class="fa-solid fa-box-open"></i> Packs</a>
@@ -77,33 +78,33 @@
 
       <div id="discoveritems">
 
-        <a href="discoverrestaurants.html">
+        <a href="{% url 'restaurants' %}">
        <div id="restaurantesebaresitem" style="width: 20%; height:45%; border-radius: 7%; background-color: lightgray; position: absolute; margin-top: 11%; margin-left: 2%;">
     
          <h2 style="font-size: 20px; margin-left:13%; margin-top: 9%;">RESTAURANTES E BARES</h2>
 
-         <img style="width:46%; height:35%; position:absolute; z-index: 18; margin-top: 40%; margin-left: 10%;" src="./images/burger-hi.png">
+         <img style="width:46%; height:35%; position:absolute; z-index: 18; margin-top: 40%; margin-left: 10%;" src="/staticfiles/images/burger-hi.png">
 
-         <img style="width:46%; height:46%; position:absolute; z-index: 18; margin-top: 31%; margin-left: 40%;" src="./images/4973066.png">
+         <img style="width:46%; height:46%; position:absolute; z-index: 18; margin-top: 31%; margin-left: 40%;" src="/staticfiles/images/4973066.png">
        </div>
         </a>
 
-        <a href="discovertoldos.html">
+        <a href="{% url 'equips' %}">
        <div id="toldositem" style="width: 20%; height:45%; border-radius: 7%; background-color: lightgray; position: absolute; margin-top: 11%; margin-left: 25%;">
     
         <h2 style="font-size: 20px; margin-left:11%; margin-top: 9%;">ACOMODAÇÕES DE PRAIA</h2>
 
-        <img style="width:46%; height:56%; position:absolute; z-index: 18; margin-top: 20%; margin-left: 25%;" src="./images/image_processing20200610-6072-1nni9yu.png">
+        <img style="width:46%; height:56%; position:absolute; z-index: 18; margin-top: 20%; margin-left: 25%;" src="/staticfiles/images/image_processing20200610-6072-1nni9yu.png">
     
        </div>
         </a>
 
-        <a href="discoverestacionamento.html">
+        <a href="{% url 'parkings' %}">
        <div id="estacionamentoitem" style="width: 20%; height:45%; border-radius: 7%; background-color: lightgray; position: absolute; margin-top: 11%; margin-left: 48%;">
     
         <h2 style="font-size: 20px; margin-left:21%; margin-top: 9%;">ESTACIONAMENTO</h2>
     
-        <img style="width:50%; height:56%; position:absolute; z-index: 18; margin-top: 20%; margin-left: 25%;" src="./images/187431.png">
+        <img style="width:50%; height:56%; position:absolute; z-index: 18; margin-top: 20%; margin-left: 25%;" src="/staticfiles/images/187431.png">
        </div>
         </a>
 
@@ -112,7 +113,7 @@
     
         <h2 style="font-size: 20px; margin-left:39%; margin-top: 9%;">PACKS</h2>
     
-        <img style="width:93%; height:92%; position:absolute; z-index: 18; margin-top: 1%; margin-left: 5%;" src="./images/packart-removebg-preview.png">
+        <img style="width:93%; height:92%; position:absolute; z-index: 18; margin-top: 1%; margin-left: 5%;" src="/staticfiles/images/packart-removebg-preview.png">
        </div>
         </a>
       </div>
@@ -140,7 +141,7 @@
 
       </div>
 
-      <button class="btn btn-primary" style="">VER MAIS</button>
+      <button class="btn btn-primary">VER MAIS</button>
 
       <div style="margin-top: 25%;">
       <h1 style="position: absolute; color:black; margin-top: 34%; margin-left:2%; font-size:30px; ">SUGESTÕES DE ACOMODAÇÕES DE PRAIA</h1>

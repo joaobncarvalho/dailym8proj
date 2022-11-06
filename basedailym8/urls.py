@@ -15,17 +15,35 @@ urlpatterns = [
     
     #FIM --- Paths API Reservas
 
-    path('mainpage/', views.mainpage, name="mainpage"),
+    path('', views.mainpage, name="mainpage"),
     path('register/', views.register, name="register"),
-    path('', views.login, name="login"),
+    path('login/', views.login, name="login"),
     
     #RESTAURANTES
+
     path('restaurant/',views.restaurants, name="restaurants"),
     path('restaurant/<str:pk>/', views.restaurantsingle, name="restaurantsingle"),
+    
     #FIM -- RESTAURANTES
+    
+    #ESTACIONAMENTOS
+
+    path('parking/',views.parking, name="parkings"),
+    path('parking/<str:pk>/', views.restaurantsingle, name="restaurantsingle"),
+    
+    #FIM -- ESTACIONAMENTOS
+
+
+     #EQUIPAMENTOS
+
+    path('equip/',views.equips, name="equips"),
+    path('equip/<str:pk>/', views.equipsingle, name="equip"),
+    
+    #FIM -- EQUIPAMENTOS
 
 
 
+    
     path('spot/',views.spot, name="spots"),
     path('spot/<str:pk>/', views.singlespot, name="singlespot"),
     path('estacionamento/', views.estacionamento, name="estacionamento"),
