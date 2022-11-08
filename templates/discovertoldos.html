@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover Restaurantes</title>
+    <title>Discover Toldos</title>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/15e6590408.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -83,7 +83,7 @@
         <option value="2">Pior Avaliação</option>
       </select>
       {% for i in equips %}
-      <div id="suggestionrestaurantandbaritem" style="position: flex; width:20%; height:40%; background-color:lightgray; border-radius: 7%; margin-left: 2%; margin-top: 10%;">
+      <div id="suggestionrestaurantandbaritem" style="flex: wrap; position: absolute;; width:20%; height:40%; background-color:lightgray; border-radius: 7%; margin-left: 2%; margin-top: 10%;">
 
         <h2 style="margin-top: 47%; margin-left: 8%; font-size: 25px;">{{i.praia}}</h2>
 
@@ -93,12 +93,12 @@
 
 
         <a href="reserva.html">
-        <button class="btn btn-primary" style="margin-top: -15%; margin-left: 60%;">RESERVAR</button>
+        <button class="btn btn-primary" style="position: absolute; margin-top: -15%; margin-left: 60%;">RESERVAR</button>
         </a>
 
       </div>
 
-      <div id="organize1" style="position:flex ;width: 89%; height:90%; background-color: gray; z-index: -2; position: absolute; margin-top: 10%; margin-left: 2%;">
+      <div id="organize1" style="position: absolute; width: 89%; height:90%; background-color: gray; z-index: -2; position: absolute; margin-top: 10%; margin-left: 2%;">
 
       </div>
       {% endfor %}
