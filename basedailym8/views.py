@@ -16,7 +16,7 @@ def login(request):
     return render(request, 'homelogin.html')
 
 def mainpage(request):
-    return render(request, 'mainpage.html')
+    return render(request, 'index.html')
 
 
 
@@ -96,13 +96,13 @@ def restaurants(request):
     
     restaurants = Restaurante.objects.all()
     context = {'restaurants': restaurants}
-    return render(request, 'discoverrestaurants.html', context)
+    return render(request, 'html/grid-listing-filterscol-delivery.html', context)
 
 def restaurantsingle(request,pk):
     
     restaurant = Restaurante.objects.get(id=pk)
     context = {'restaurant': restaurant}
-    return render(request, 'basedailym8/restaurantsingle.html', context)
+    return render(request, 'html/detail-restaurant.html', context)
 
 #FIM -- RESTAURANTES
 
