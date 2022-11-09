@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+X-Content-Type-Options: nosniff
+
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -64,7 +69,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates'
+            BASE_DIR / 'foogra_v.2.3/html/'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -134,7 +139,7 @@ STATIC_URL = '/staticfiles/'
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [ 
-    BASE_DIR / 'static'
+    BASE_DIR / 'foogra_v.2.3/html/css/'
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
