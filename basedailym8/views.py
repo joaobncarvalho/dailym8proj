@@ -16,7 +16,7 @@ def login(request):
     return render(request, 'homelogin.html')
 
 def mainpage(request):
-    return render(request, '/index.html')
+    return render(request, 'index.html')
 
 
 
