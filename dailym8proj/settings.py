@@ -13,9 +13,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
-X-Content-Type-Options: nosniff
-
-
+import mimetypes
+mimetypes.add_type("text/html", ".html", True)
+mimetypes.add_type("text/css", ".css", True)
+mimetypes.add_type("application/javascript", ".js", True)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
