@@ -1,0 +1,9 @@
+.organize1{
+    width: 89%; 
+    height:90%; 
+    background-color: gray; 
+    z-index: -2; 
+    position: absolute; 
+    margin-top: 10%; 
+    margin-left: 2%;
+}

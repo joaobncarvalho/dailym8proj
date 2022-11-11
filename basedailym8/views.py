@@ -1,5 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
+import random
 from .models import Spot
 from .models import Reserva
 from .forms import ReservaForm
@@ -16,7 +17,7 @@ def login(request):
     return render(request, 'homelogin.html')
 
 def mainpage(request):
-    return render(request, 'index.html')
+    return render(request, 'mainpage.html')
 
 
 
@@ -96,13 +97,13 @@ def restaurants(request):
     
     restaurants = Restaurante.objects.all()
     context = {'restaurants': restaurants}
-    return render(request, 'html/grid-listing-filterscol-delivery.html', context)
+    return render(request, 'restaurants.html', context)
 
 def restaurantsingle(request,pk):
     
     restaurant = Restaurante.objects.get(id=pk)
     context = {'restaurant': restaurant}
-    return render(request, 'html/detail-restaurant.html', context)
+    return render(request, 'single-restaurant.html', context)
 
 #FIM -- RESTAURANTES
 
@@ -113,7 +114,7 @@ def parking(request):
     
     parkings = Estacionamento.objects.all()
     context = {'parkings': parkings}
-    return render(request, 'discoverestacionamento.html', context)
+    return render(request, 'estacionamentos.html', context)
 
 def parkingsingle(request,pk):
     
@@ -131,7 +132,7 @@ def equips(request):
     
     equips = Praiaequip.objects.all()
     context = {'equips': equips}
-    return render(request, 'discovertoldos.html', context)
+    return render(request, 'toldos.html', context)
 
 def equipsingle(request,pk):
     

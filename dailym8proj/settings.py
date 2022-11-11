@@ -70,7 +70,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'foogra_v.2.3/html/'
+            BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -140,7 +140,7 @@ STATIC_URL = '/staticfiles/'
 MEDIA_URL = '/images/'
 
 STATICFILES_DIRS = [ 
-    BASE_DIR / 'foogra_v.2.3/html/css/'
+    BASE_DIR / 'static'
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
